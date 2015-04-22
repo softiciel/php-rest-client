@@ -1,0 +1,29 @@
+{
+  "name": "jaenmedina/php-rest-client",
+  "description": "A PHP REST Client.",
+  "version": "0.0.0",
+  "type": "library",
+  "keywords": ["php", "rest", "client", "http", "curl"],
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name": "Jaen Medina",
+      "email": "jaenmedina@gmail.com",
+      "role": "Developer"
+    }
+  ],
+
+  "require": {
+    "php": ">=5.3"
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*",
+    "guzzlehttp/guzzle": "~5.0"
+  },
+
+  "autoload": {
+    "files": ["bootstrap.php"]
+  }
+}
