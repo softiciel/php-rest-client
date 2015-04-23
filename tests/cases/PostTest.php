@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\Post;
+
 class PostTest extends TestCase {
 
     public function testPost(){

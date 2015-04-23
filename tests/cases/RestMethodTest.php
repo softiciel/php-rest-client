@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\Get;
+
 class RestMethodTest extends TestCase {
 
     public function testExecuteCurlGetsError(){

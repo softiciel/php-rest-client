@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\Head;
+
 class HeadTest extends TestCase {
 
     public function testHead(){

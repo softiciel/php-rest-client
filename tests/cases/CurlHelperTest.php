@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\CurlHelper;
+
 class CurlHelperTest extends TestCase {
 
     public function testExecuteSimpleCurlOperation(){

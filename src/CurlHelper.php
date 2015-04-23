@@ -1,5 +1,7 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Methods;
+
 class CurlHelper {
 
     /**

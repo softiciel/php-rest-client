@@ -1,6 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
 use GuzzleHttp\Post\PostFile;
+use jaenmedina\PhpRestClient\Methods\Put;
 
 class PutTest extends TestCase {
 

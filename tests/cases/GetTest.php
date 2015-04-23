@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\Get;
+
 class GetTest extends TestCase {
 
     public function testGet(){

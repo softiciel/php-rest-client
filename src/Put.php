@@ -1,4 +1,5 @@
 <?php
+namespace jaenmedina\PhpRestClient\Methods;
 
 class Put extends RestMethod {
 

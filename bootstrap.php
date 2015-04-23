@@ -1,11 +1,27 @@
 <?php
-define("SRC_PATH", dirname(__FILE__) . "/src");
-
 require_once getcwd() . '/vendor/autoload.php';
 
-spl_autoload_register(function ($class) {
-    $classFullPath = SRC_PATH . '/' . $class . '.php';
-    if(file_exists($classFullPath)) {
-        require_once($classFullPath);
+spl_autoload_register(
+    function ($class)
+    {
+        static $classes = NULL;
+        static $path    = NULL;
+
+        if ($classes === NULL) {
+            $classes = array(
+                'jaenmedina\PhpRestClient\Methods\CurlHelper' => '/src/CurlHelper.php',
+                'jaenmedina\PhpRestClient\Methods\Get' => '/src/Get.php',
+                'jaenmedina\PhpRestClient\Methods\Post' => '/src/Post.php',
+                'jaenmedina\PhpRestClient\Methods\Put' => '/src/Put.php',
+                'jaenmedina\PhpRestClient\Methods\Head' => '/src/Head.php',
+                'jaenmedina\PhpRestClient\Methods\Options' => '/src/Options.php',
+                'jaenmedina\PhpRestClient\Methods\RestMethod' => '/src/RestMethod.php',
+            );
+            $path = dirname(__FILE__);
+        }
+
+        if (isset($classes[$class])) {
+            require $path . $classes[$class];
+        }
     }
-});
+);

@@ -1,5 +1,8 @@
 <?php
 
+namespace jaenmedina\PhpRestClient\Tests;
+use jaenmedina\PhpRestClient\Methods\Options;
+
 class OptionsTest extends TestCase {
 
     public function testOptions(){
