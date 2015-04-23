@@ -63,6 +63,7 @@ abstract class RestMethod {
         $this->setCurlOption('CURLOPT_USERAGENT', self::DEFAULT_USER_AGENT);
         $this->setCurlOption('CURLOPT_FOLLOWLOCATION', true);
         $this->setCurlOption('CURLOPT_MAXREDIRS', 5);
+        $this->setCurlOption('CURLOPT_VERBOSE', false);
     }
 
     protected function tearDown(){

@@ -9,6 +9,7 @@ class CurlHelperTest extends TestCase {
         $curlHelper = new CurlHelper();
         $curlHelper->startCurlSession();
         $curlHelper->setCurlOption(CURLOPT_URL, 'httpmirror.com/get');
+        $curlHelper->setCurlOption(CURLOPT_VERBOSE, false);
         $result = $curlHelper->executeCurl();
         $curlHelper->closeCurlSession();
 
@@ -19,6 +20,7 @@ class CurlHelperTest extends TestCase {
         $curlHelper = new CurlHelper();
         $curlHelper->startCurlSession();
         $curlHelper->setCurlOption(CURLOPT_URL, 'httpmirror.com/get');
+        $curlHelper->setCurlOption(CURLOPT_VERBOSE, false);
         $curlHelper->executeCurl();
         $status = $curlHelper->getCurlInfo(CURLINFO_HTTP_CODE);
         $curlHelper->closeCurlSession();
@@ -30,6 +32,7 @@ class CurlHelperTest extends TestCase {
         $curlHelper = new CurlHelper();
         $curlHelper->startCurlSession();
         $curlHelper->setCurlOption(CURLOPT_URL, 'http://www.slhgsdlkf08190409248-fnaldkg0832r.com');
+        $curlHelper->setCurlOption(CURLOPT_VERBOSE, false);
         $curlHelper->executeCurl();
         $error = $curlHelper->getCurlError();
         $curlHelper->closeCurlSession();
