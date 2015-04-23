@@ -1,7 +1,7 @@
 <?php
 define("SRC_PATH", dirname(__FILE__) . "/src");
 
-require_once 'vendor/autoload.php';
+require_once '/vendor/autoload.php';
 
 spl_autoload_register(function ($class) {
     $classFullPath = SRC_PATH . '/' . $class . '.php';
