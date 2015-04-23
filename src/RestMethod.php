@@ -149,13 +149,13 @@ abstract class RestMethod {
      * @return array
      */
     protected function getResult(){
-        return [
+        return array(
             'status' => $this->status,
             'time' => $this->time,
             'header' => $this->header,
             'body' => $this->body,
             'error' => $this->error
-        ];
+        );
     }
 
     private function applyCurlOptions(){
