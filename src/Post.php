@@ -12,7 +12,7 @@ class Post extends RestMethod {
      */
     public function __construct($url){
         parent::__construct($url);
-        $this->parameters = array();
+        $this->parameters = [];
     }
 
     /**

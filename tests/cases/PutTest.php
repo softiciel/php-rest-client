@@ -20,7 +20,7 @@ class PutTest extends TestCase {
         $fileName = 'hello_world.html';
         $url = 'http://www.httpmirror.com/put/' . $fileName;
         $putMethod = new Put($url);
-        $data = array('abc' => 'def', 'john' => 'doe');
+        $data = ['abc' => 'def', 'john' => 'doe'];
         $result = $putMethod->execute($data);
 
         $this->assertContains('HTTP/1.1 200 OK', $result['header']);

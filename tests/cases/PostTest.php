@@ -6,10 +6,10 @@ class PostTest extends TestCase {
         $url = 'http://www.slugifier.com/api/generate-slug';
         $postMethod = new Post($url);
         $postMethod->setParameter('text', 'Read these tips to improve your résumé and get a great job!');
-        $postMethod->setParameter('rules', array('improve' => 'improvement'));
+        $postMethod->setParameter('rules', ['improve' => 'improvement']);
         $postMethod->setParameter('separator', '_');
         $postMethod->setParameter('exclude_stop_words', true);
-        $postMethod->setParameter('words_to_exclude', array('read', 'great'));
+        $postMethod->setParameter('words_to_exclude', ['read', 'great']);
 
         $result = $postMethod->execute();
 
