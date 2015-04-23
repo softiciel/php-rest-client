@@ -8,5 +8,5 @@ php:
   - 7.0
   - hhvm
 
-script: composer install
+install: composer install --dev
 script: phpunit --coverage-text
