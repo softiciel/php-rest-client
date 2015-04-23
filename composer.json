@@ -1,7 +1,7 @@
 {
   "name": "jaenmedina/php-rest-client",
   "description": "A PHP REST Client.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "library",
   "keywords": ["php", "rest", "client", "http", "curl"],
   "license": "MIT",
