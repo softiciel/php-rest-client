@@ -18,7 +18,7 @@ class Post extends RestMethod {
     /**
      * @return array
      */
-    public function post(){
+    public function execute(){
         $this->setUp();
         $this->setCurlOption('CURLOPT_POST', true);
         $this->setCurlOption('CURLOPT_POSTFIELDS', http_build_query($this->parameters));

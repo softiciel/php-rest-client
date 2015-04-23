@@ -4,14 +4,14 @@ class PostTest extends TestCase {
 
     public function testPost(){
         $url = 'http://www.slugifier.com/api/generate-slug';
-        $postHelper = new Post($url);
-        $postHelper->setParameter('text', 'Read these tips to improve your résumé and get a great job!');
-        $postHelper->setParameter('rules', array('improve' => 'improvement'));
-        $postHelper->setParameter('separator', '_');
-        $postHelper->setParameter('exclude_stop_words', true);
-        $postHelper->setParameter('words_to_exclude', array('read', 'great'));
+        $postMethod = new Post($url);
+        $postMethod->setParameter('text', 'Read these tips to improve your résumé and get a great job!');
+        $postMethod->setParameter('rules', array('improve' => 'improvement'));
+        $postMethod->setParameter('separator', '_');
+        $postMethod->setParameter('exclude_stop_words', true);
+        $postMethod->setParameter('words_to_exclude', array('read', 'great'));
 
-        $result = $postHelper->post();
+        $result = $postMethod->execute();
 
         $this->assertContains('HTTP/1.1 200 OK', $result['header']);
         $this->assertContains('Content-Type: application/json', $result['header']);
