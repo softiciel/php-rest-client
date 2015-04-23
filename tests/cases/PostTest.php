@@ -9,7 +9,7 @@ class PostTest extends TestCase {
         $postHelper->setParameter('rules', array('improve' => 'improvement'));
         $postHelper->setParameter('separator', '_');
         $postHelper->setParameter('exclude_stop_words', true);
-        $postHelper->setParameter('words_to_exclude', ['read', 'great']);
+        $postHelper->setParameter('words_to_exclude', array('read', 'great'));
 
         $result = $postHelper->post();
 
