@@ -112,8 +112,7 @@ abstract class RestMethod {
     protected function executeCurl(){
         $this->applyCurlOptions();
         $result = $this->curlHelper->executeCurl();
-        $this->status = $this->curlHelper->getCurlInfo(CURLINFO_HTTP_CODE);
-        $this->time = $this->curlHelper->getCurlInfo(CURLINFO_TOTAL_TIME) * 1000;
+        $this->setStatusAndTime();
         if($result != false){
             if($this->headersAreIncluded()){
                 $header_size = $this->curlHelper->getCurlInfo(CURLINFO_HEADER_SIZE);
@@ -131,6 +130,11 @@ abstract class RestMethod {
             $error = $this->curlHelper->getCurlError();
             $this->error = $error != "" ? $error : null;
         }
+    }
+
+    private function setStatusAndTime(){
+        $this->status = $this->curlHelper->getCurlInfo(CURLINFO_HTTP_CODE);
+        $this->time = $this->curlHelper->getCurlInfo(CURLINFO_TOTAL_TIME) * 1000;
     }
 
     protected function startCurlSession(){
