@@ -2,6 +2,7 @@ PHP REST Client
 =========
 [![Build Status](https://travis-ci.org/jaenmedina/php-rest-client.svg?branch=master)](https://travis-ci.org/jaenmedina/php-rest-client)
 [![Codacy Badge](https://www.codacy.com/project/badge/6db38b171c54491d866546f95a73312f)](https://www.codacy.com/app/jaen-medina/php-rest-client)
+[![Code Climate](https://codeclimate.com/github/jaenmedina/php-rest-client/badges/gpa.svg)](https://codeclimate.com/github/jaenmedina/php-rest-client)
 
 A PHP REST Client.
 
