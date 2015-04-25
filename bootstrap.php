@@ -15,7 +15,10 @@ spl_autoload_register(
                 'jaenmedina\PhpRestClient\Methods\Put' => '/src/Put.php',
                 'jaenmedina\PhpRestClient\Methods\Head' => '/src/Head.php',
                 'jaenmedina\PhpRestClient\Methods\Options' => '/src/Options.php',
+                'jaenmedina\PhpRestClient\Methods\Delete' => '/src/Delete.php',
                 'jaenmedina\PhpRestClient\Methods\RestMethod' => '/src/RestMethod.php',
+
+                'jaenmedina\PhpRestClient\Tests\TestCase' => '/tests/cases/TestCase.php',
             );
             $path = dirname(__FILE__);
         }
