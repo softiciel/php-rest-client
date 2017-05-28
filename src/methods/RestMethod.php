@@ -124,10 +124,10 @@ abstract class RestMethod
         $this->setStatusAndTime();
         if ($result != false) {
             if ($this->headersAreIncluded()) {
-                $header_size = $this->curlHelper->getCurlInfo(CURLINFO_HEADER_SIZE);
-                $this->header = substr($result, 0, $header_size);
-                if ($header_size != strlen($result)) {
-                    $this->body = substr($result, $header_size);
+                $headerSize = $this->curlHelper->getCurlInfo(CURLINFO_HEADER_SIZE);
+                $this->header = substr($result, 0, $headerSize);
+                if ($headerSize != strlen($result)) {
+                    $this->body = substr($result, $headerSize);
                 }
             } else {
                 $this->body = $result;
