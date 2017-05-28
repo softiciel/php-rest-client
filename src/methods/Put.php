@@ -1,12 +1,13 @@
 <?php
-namespace jaenmedina\PhpRestClient\Methods;
+namespace Softiciel\PhpRestClient\Methods;
 
-class Put extends RestMethod {
-
+class Put extends RestMethod
+{
     /**
      * @return array
      */
-    public function execute($data){
+    public function execute($data)
+    {
         $data = is_array($data) ? http_build_query($data) : $data;
         $this->setUp();
         $this->setCurlOption('CURLOPT_RETURNTRANSFER', true);

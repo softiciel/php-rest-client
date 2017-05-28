@@ -1,7 +1,7 @@
 {
-  "name": "jaenmedina/php-rest-client",
+  "name": "softiciel/php-rest-client",
   "description": "A PHP REST Client.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "library",
   "keywords": ["php", "rest", "client", "http", "curl"],
   "license": "MIT",
@@ -24,6 +24,9 @@
   },
 
   "autoload": {
-    "files": ["bootstrap.php"]
+    "psr-4": {
+      "Softiciel\\PhpRestClient\\": "src/",
+      "Softiciel\\PhpRestClient\\Methods\\": "src/methods/"
+    }
   }
 }

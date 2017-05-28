@@ -1,11 +1,13 @@
 <?php
+namespace Softiciel\PhpRestClient\Tests;
 
-namespace jaenmedina\PhpRestClient\Tests;
-use jaenmedina\PhpRestClient\Methods\CustomMethod;
+use PHPUnit_Framework_TestCase;
+use Softiciel\PhpRestClient\Methods\CustomMethod;
 
-class CustomTest extends TestCase {
-
-    public function testExecute(){
+class CustomTest extends PHPUnit_Framework_TestCase
+{
+    public function testExecute()
+    {
         $url = 'http://www.example.com';
         $curlOptions = [
             'CURLOPT_HEADER' => false
@@ -20,5 +22,4 @@ class CustomTest extends TestCase {
         $this->assertNull($result['header']);
         $this->assertContains('This domain is established to be used for illustrative examples in documents.', $result['body']);
     }
-
-} 
+}

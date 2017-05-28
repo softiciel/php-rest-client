@@ -1,11 +1,13 @@
 <?php
+namespace Softiciel\PhpRestClient\Tests;
 
-namespace jaenmedina\PhpRestClient\Tests;
-use jaenmedina\PhpRestClient\Methods\Get;
+use PHPUnit_Framework_TestCase;
+use Softiciel\PhpRestClient\Methods\Get;
 
-class RestMethodTest extends TestCase {
-
-    public function testExecuteCurlGetsError(){
+class RestMethodTest extends PHPUnit_Framework_TestCase
+{
+    public function testExecuteCurlGetsError()
+    {
         $unexistingURL = 'www.ssndsgfkljnaljbflagf.com';
         $getHelper = new Get($unexistingURL);
 
@@ -13,10 +15,11 @@ class RestMethodTest extends TestCase {
 
         $this->assertNull($result['header']);
         $this->assertNull($result['body']);
-        $this->assertEquals('Couldn\'t resolve host \'www.ssndsgfkljnaljbflagf.com\'', $result['error']);
+        $this->assertEquals(0, $result['status']);
     }
 
-    public function testExecuteCurlGetsStatus(){
+    public function testExecuteCurlGetsStatus()
+    {
         $url = 'www.example.com';
         $getHelper = new Get($url);
 
@@ -25,7 +28,8 @@ class RestMethodTest extends TestCase {
         $this->assertEquals(200, $result['status']);
     }
 
-    public function testExecuteCurlGetsTime(){
+    public function testExecuteCurlGetsTime()
+    {
         $url = 'www.example.com';
         $getHelper = new Get($url);
 
@@ -34,5 +38,4 @@ class RestMethodTest extends TestCase {
         $this->assertNotNull($result['time']);
         $this->assertInternalType('float', $result['time']);
     }
-
 }

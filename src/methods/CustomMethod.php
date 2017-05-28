@@ -1,13 +1,13 @@
 <?php
+namespace Softiciel\PhpRestClient\Methods;
 
-namespace jaenmedina\PhpRestClient\Methods;
-
-class CustomMethod extends RestMethod {
-
+class CustomMethod extends RestMethod
+{
     /**
      * @return array
      */
-    public function execute(){
+    public function execute()
+    {
         $this->startCurlSession();
         $this->setCurlOption('CURLOPT_URL', $this->url);
         $this->executeCurl();
@@ -15,5 +15,4 @@ class CustomMethod extends RestMethod {
         $this->closeCurlSession();
         return $result;
     }
-
-} 
+}

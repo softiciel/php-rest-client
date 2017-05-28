@@ -1,9 +1,8 @@
 <?php
+namespace Softiciel\PhpRestClient\Methods;
 
-namespace jaenmedina\PhpRestClient\Methods;
-
-class Post extends RestMethod {
-
+class Post extends RestMethod
+{
     /**
      * @var array
      */
@@ -12,7 +11,8 @@ class Post extends RestMethod {
     /**
      * @param string $url
      */
-    public function __construct($url){
+    public function __construct($url)
+    {
         parent::__construct($url);
         $this->parameters = [];
     }
@@ -20,7 +20,8 @@ class Post extends RestMethod {
     /**
      * @return array
      */
-    public function execute(){
+    public function execute()
+    {
         $this->setUp();
         $this->setCurlOption('CURLOPT_POST', true);
         $this->setCurlOption('CURLOPT_POSTFIELDS', http_build_query($this->parameters));
@@ -34,29 +35,32 @@ class Post extends RestMethod {
      * @param string $name
      * @param string $value
      */
-    public function setParameter($name, $value){
+    public function setParameter($name, $value)
+    {
         $this->parameters[$name] = $value;
     }
 
     /**
      * @param array $parameters
      */
-    public function setParameters($parameters){
+    public function setParameters($parameters)
+    {
         $this->parameters = $parameters;
     }
 
     /**
      * @param $name
      */
-    public function deleteParameter($name){
+    public function deleteParameter($name)
+    {
         unset($this->parameters[$name]);
     }
 
     /**
      * @return array
      */
-    public function getParameters(){
+    public function getParameters()
+    {
         return $this->parameters;
     }
-
 }

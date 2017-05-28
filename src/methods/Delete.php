@@ -1,17 +1,18 @@
 <?php
+namespace Softiciel\PhpRestClient\Methods;
 
-namespace jaenmedina\PhpRestClient\Methods;
-
-class Get extends RestMethod {
-
+class Delete extends RestMethod
+{
     /**
      * @return array
      */
     public function execute(){
         $this->setUp();
+        $this->setCurlOption('CURLOPT_CUSTOMREQUEST', 'DELETE');
         $this->executeCurl();
         $result = $this->getResult();
         $this->tearDown();
         return $result;
     }
 }
+

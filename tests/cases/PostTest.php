@@ -1,24 +1,22 @@
 <?php
+namespace Softiciel\PhpRestClient\Tests;
 
-namespace jaenmedina\PhpRestClient\Tests;
-use jaenmedina\PhpRestClient\Methods\Post;
+use PHPUnit_Framework_TestCase;
+use Softiciel\PhpRestClient\Methods\Post;
 
-class PostTest extends TestCase {
-
-    public function testPost(){
-        $url = 'http://www.slugifier.com/api/generate-slug';
+class PostTest extends PHPUnit_Framework_TestCase
+{
+    public function testPost()
+    {
+        $url = 'https://httpbin.org/post';
         $postMethod = new Post($url);
-        $postMethod->setParameter('text', 'Read these tips to improve your résumé and get a great job!');
-        $postMethod->setParameter('rules', ['improve' => 'improvement']);
-        $postMethod->setParameter('separator', '_');
-        $postMethod->setParameter('exclude_stop_words', true);
-        $postMethod->setParameter('words_to_exclude', ['read', 'great']);
+        $postMethod->setParameter('text', 'Some test text');
 
         $result = $postMethod->execute();
+        $paramResults = json_decode($result['body']);
 
         $this->assertContains('HTTP/1.1 200 OK', $result['header']);
         $this->assertContains('Content-Type: application/json', $result['header']);
-        $this->assertContains('{"slug":"tips_improvement_resume_job"}', $result['body']);
+        $this->assertEquals('Some test text', $paramResults->form->text);
     }
-
 }

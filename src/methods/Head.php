@@ -1,13 +1,13 @@
 <?php
+namespace Softiciel\PhpRestClient\Methods;
 
-namespace jaenmedina\PhpRestClient\Methods;
-
-class Head extends RestMethod {
-
+class Head extends RestMethod
+{
     /**
      * @return string
      */
-    public function execute(){
+    public function execute()
+    {
         $this->setUp();
         $this->setCurlOption('CURLOPT_NOBODY', true);
         $this->executeCurl();
@@ -15,5 +15,4 @@ class Head extends RestMethod {
         $this->tearDown();
         return $result;
     }
-
 }

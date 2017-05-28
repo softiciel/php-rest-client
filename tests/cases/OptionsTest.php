@@ -1,11 +1,13 @@
 <?php
+namespace Softiciel\PhpRestClient\Tests;
 
-namespace jaenmedina\PhpRestClient\Tests;
-use jaenmedina\PhpRestClient\Methods\Options;
+use PHPUnit_Framework_TestCase;
+use Softiciel\PhpRestClient\Methods\Options;
 
-class OptionsTest extends TestCase {
-
-    public function testOptions(){
+class OptionsTest extends PHPUnit_Framework_TestCase
+{
+    public function testOptions()
+    {
         $url = 'http://www.example.com';
         $optionsMethod = new Options($url);
 
@@ -16,5 +18,4 @@ class OptionsTest extends TestCase {
         $this->assertNull($optionsMethod->getBody());
         $this->assertNull($result['body']);
     }
-
 }
