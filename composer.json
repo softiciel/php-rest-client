@@ -1,7 +1,7 @@
 {
   "name": "softiciel/php-rest-client",
   "description": "A PHP REST Client.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "library",
   "keywords": ["php", "rest", "client", "http", "curl"],
   "license": "MIT",

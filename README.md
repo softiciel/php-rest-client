@@ -20,7 +20,7 @@ Add the package dependency softiciel/php-rest-client in your composer.json
 ```sh
 {
     "require": {
-        "softiciel/php-rest-client": "0.2.0"
+        "softiciel/php-rest-client": "0.3.0"
     }
 }
 ```
@@ -29,7 +29,7 @@ Add the package dependency softiciel/php-rest-client in your composer.json
 How to use?
 --------------
 
-Just instantiate the method you want to execute. There is support for GET, POST, PUT HEAD and OPTIONS methods.
+Just instantiate the method you want to execute. There is support for GET, POST, PUT HEAD, DELETE and OPTIONS methods.
 
 For GET method:
 
@@ -87,6 +87,15 @@ For custom method:
 $url = 'http://www.example.com';
 $customMethod = new CustomMethod($url);
 $result = $customMethod->execute('EXECUTE');
+print_r($result); // Will print the array with keys 'status', 'time', 'header', 'body' and 'error'
+```
+
+You can also use the RestClient class:
+```sh
+$result = RestClient::execute([
+    'method' => 'get',
+    'url' => 'www.example.org'
+]);
 print_r($result); // Will print the array with keys 'status', 'time', 'header', 'body' and 'error'
 ```
 
